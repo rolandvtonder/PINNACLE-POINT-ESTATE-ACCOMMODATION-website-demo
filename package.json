@@ -1,0 +1,32 @@
+{
+  "name": "pinnacle-point-estate",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/images.mjs && node scripts/pages.mjs && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
+    "preview": "vite preview",
+    "lint": "tsc --noEmit",
+    "pages": "node scripts/pages.mjs",
+    "build:pages": "node scripts/images.mjs && node scripts/pages.mjs --base=/PINNACLE-POINT-ESTATE-ACCOMMODATION-website-demo/ && vite build --base=/PINNACLE-POINT-ESTATE-ACCOMMODATION-website-demo/ && vite build --ssr src/entry-server.tsx --outDir dist-ssr --base=/PINNACLE-POINT-ESTATE-ACCOMMODATION-website-demo/ && node scripts/prerender.mjs",
+    "deploy": "npm run build:pages && node scripts/deploy-pages.mjs",
+    "images": "node scripts/images.mjs"
+  },
+  "dependencies": {
+    "lenis": "^1.3.11",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.14",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.3"
+  }
+}
